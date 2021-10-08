@@ -13,7 +13,7 @@ public class Mapping {
         Collections.sort(list);
         //Custom sorting requires Comparator
         System.out.println("After sorting: "+ list);
-        Collections.sort(list, new MyComparator());
+        Collections.sort(list, (i1,i2)->(i1>i2)?-1:(i1<i2)?+1:0);
         System.out.println("After Custom sorting: "+list);
     }
 }
