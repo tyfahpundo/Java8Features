@@ -17,6 +17,8 @@ public class PredTest {
         mi(p1,x);
         System.out.println("The even numbers are: ");
         mi(p2,x);
+        System.out.println("The numbers not greater than 10: ");
+        mi(p1.negate(),x);
         System.out.println("The numbers greater than 10 and even are: ");
         mi(p1.and(p2), x);
         System.out.println("The numbers greater than 10 or even: ");
