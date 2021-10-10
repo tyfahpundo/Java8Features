@@ -11,16 +11,22 @@ public class Manage {
         Predicate<Worker> p = emp->emp.designation.equals("Manager");
         display(p,empList);
         //All Harare Employees
-        System.out.println("All Harare Employees");
+        System.out.println("All Harare Employees:");
         Predicate<Worker> p2 = emp->emp.city.equals("Harare");
         display(p2,empList);
         //Salary less than 20000
-        System.out.println("Employees with Salaries < 20000");
+        System.out.println("Employees with Salaries < 20000:");
         Predicate<Worker>p3 = emp->emp.salary<20000;
         display(p3,empList);
         //All Harare Managers predicate chaining
         System.out.println("All Harare Managers:");
         display(p.and(p2), empList);
+        //All Managers with salaries less than 20000
+        System.out.println("All Managers with Less Salaries:");
+        display(p.or(p3),empList);
+        //All Employees who are not managers
+        System.out.println("All Employees who are not managers:");
+        display(p.negate(),empList );
 
 //        System.out.println(empList);
     }
