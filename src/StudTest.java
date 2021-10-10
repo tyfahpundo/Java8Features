@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class StudTest {
     public static void main(String[] args) {
         ArrayList<Student> studentList = new ArrayList<>();
         populate(studentList);
 
+        Predicate<Student> p = stud->stud.score>60;
         Function<Student,String> f = s->{
             int marks = s.score;
             if(marks>= 80){
@@ -21,11 +23,19 @@ public class StudTest {
                 return "F[Failed Student]";
             }
         };
+
         for(Student s : studentList){
             System.out.println(s.name);
             System.out.println(s.score);
             System.out.println("Grade: "+f.apply(s));
             System.out.println("***********************************************************");
+        }
+        for(Student student : studentList){
+            if(p.test(student)){
+                System.out.println("Name: "+student.name);
+                System.out.println("Name: "+student.score);
+                System.out.println("*********************************************************");
+            }
         }
     }
 
