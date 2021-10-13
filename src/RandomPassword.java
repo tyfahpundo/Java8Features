@@ -17,10 +17,8 @@ public class RandomPassword {
             }
             return password;
         };
-        System.out.println(s.get());
-        System.out.println(s.get());
-        System.out.println(s.get());
-        System.out.println(s.get());
-        System.out.println(s.get());
+        for(int i=0; i<5;i++){
+            System.out.println(s.get());
+        }
     }
 }
